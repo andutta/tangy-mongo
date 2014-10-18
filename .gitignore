@@ -1,4 +1,4 @@
-.gradle
-build
-*.iml
+.gradle/**
+/build
+/*.iml
 
