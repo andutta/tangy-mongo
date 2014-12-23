@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 /**
  * Created by anshumandutta on 10/18/14.
  */
-@Configuration
+//@Configuration
 public class MongoContext {
 
     @Value("${db.server}")
