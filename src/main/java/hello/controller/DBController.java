@@ -39,4 +39,15 @@ public class DBController {
         }
     }
 
+    @RequestMapping (value = "/listbyid/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Employee listById(@PathVariable Long id){
+        try {
+            return dbOperations.listById(id);
+        } catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
