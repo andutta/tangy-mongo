@@ -1,7 +1,10 @@
 buildscript {
     repositories {
         mavenCentral()
+
     }
+
+
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.5.RELEASE")
     }
@@ -20,7 +23,10 @@ jar {
 repositories {
     mavenCentral()
 }
+repositories {
+    jcenter()
 
+}
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     // tag::actuator[]
@@ -28,6 +34,7 @@ dependencies {
     compile("org.mongodb:mongo-java-driver:2.12.4")
     compile("org.springframework.data:spring-data-mongodb:1.6.0.RELEASE")
     compile("cglib:cglib:2.2.2")
+    compile 'com.orbitz.consul:consul-client:0.6'
     // end::actuator[]
     testCompile("junit:junit")
 }
