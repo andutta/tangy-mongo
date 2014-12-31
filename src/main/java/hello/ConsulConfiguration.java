@@ -26,6 +26,9 @@ public class ConsulConfiguration {
     @Value("${consul.port}")
     private Integer consulPort;
 
+    @Value("${host.name}")
+    private String hostName;
+
     @Bean
     public String getServiceName() {
         return serviceName;
@@ -38,7 +41,7 @@ public class ConsulConfiguration {
             Consul consul = Consul.newClient(consulHost, consulPort); // connect to Consul on localhost
             AgentClient agentClient = consul.agentClient();
 
-            String serviceId = "1";
+            String serviceId = hostName + ":" + port;
 
             agentClient.register(port, 3L, serviceName, serviceId); // registers with a TTL of 3 seconds
             agentClient.pass(); // check in with Consul
