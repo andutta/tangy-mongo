@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by anshumandutta on 10/18/14.
+ * This class controls the database calls
  */
 @RestController
 @RequestMapping("/db")
